@@ -37,14 +37,26 @@ jobs:
         pwd
         ls public/
 
-    # Deploy hexo blog website.
-    - name: Run deploy
-      uses: tiyee/aliyun-oss-auto-upload@v2.0.0
+
+    - name: Upload to oss
+      id: upload_to_oss
+      uses: JohnGuan/oss-upload-action@main
       with:
+        key-id: ${{ secrets.ALICLOUDOSS_KEY_ID }}
+        key-secret: ${{ secrets.ALICLOUDOSS_KEY_SECRET }}
         region: oss-cn-beijing
-        access-key-id: ${{ secrets.ALICLOUDOSS_KEY_ID }}
-        access-key-secret: ${{ secrets.ALICLOUDOSS_KEY_SECRET }}
         bucket: rustfs-blog
-        secure: true
-        local-folder: public # local folder
-        remote-dir: /
+        assets: |
+            public/**:/
+
+    # Deploy hexo blog website.
+    #- name: Run deploy
+    #  uses: tiyee/aliyun-oss-auto-upload@v2.0.0
+    #  with:
+    #    region: oss-cn-beijing
+    #    access-key-id: ${{ secrets.ALICLOUDOSS_KEY_ID }}
+    #    access-key-secret: ${{ secrets.ALICLOUDOSS_KEY_SECRET }}
+    #    bucket: rustfs-blog
+    #    secure: true
+    #    local-folder: public # local folder
+    #    remote-dir: /
