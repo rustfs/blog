@@ -41,8 +41,3 @@ jobs:
         secure: true
         local-folder: ./disk/ # local folder
         remote-dir: /
-
-    - name: run test
-    - run: |
-        ls
-        pwd
