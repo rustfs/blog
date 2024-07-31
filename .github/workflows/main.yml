@@ -46,5 +46,5 @@ jobs:
         access-key-secret: ${{ secrets.ALICLOUDOSS_KEY_SECRET }}
         bucket: rustfs-blog
         secure: true
-        local-folder: ./public/* # local folder
+        local-folder: public/ # local folder
         remote-dir: /
