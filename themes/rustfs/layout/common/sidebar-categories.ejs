@@ -10,11 +10,15 @@
 			<% site.categories.each(function(tag){ %>
 				<%if(page.path.match(tag.path)){%>
 					<a href="/<%= tag.path %>" class="bg-colorf4">
-						<%=tag.name%>
+						<%=tag.name%>|
+						<%=page.path%>|
+						<%= tag.path %>
 					</a>
 				<%}else{ %>
 					<a href="/<%= tag.path %>">
-						<%=tag.name%>
+						<%=tag.name%>|
+						<%=page.path%>|
+						<%= tag.path %>
 					</a>	
 				<%} %>
 			<% }) %>
