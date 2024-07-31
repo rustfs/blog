@@ -25,6 +25,11 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
 
+    - name: run test
+    - run: |
+        ls
+        pwd
+
     # Deploy hexo blog website.
     - name: Run deploy
       uses: tiyee/aliyun-oss-auto-upload@v2.0.0
@@ -36,3 +41,8 @@ jobs:
         secure: true
         local-folder: ./disk/ # local folder
         remote-dir: /
+
+    - name: run test
+    - run: |
+        ls
+        pwd
