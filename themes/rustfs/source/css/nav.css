@@ -1,0 +1,207 @@
+header {
+    height: 55px;
+    min-width: 1260px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: transparent;
+}
+.header-bg {
+    background-color: #051845;
+}
+#header {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1220px;
+    position: relative;
+}
+#header > a {
+    overflow: hidden;
+    display: block;
+    width: 82px;
+    height: 27px;
+    background-color: transparent;
+}
+#header img{
+    border-style: none;
+}
+header .container {
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    padding-top: 6px;
+    padding-left:0;
+    padding-right:0;
+}
+header .container .menu {
+    width: 1080px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+header .container .login-btn {
+    margin-left: auto;
+    order: 2;
+    box-sizing: content-box;
+}
+header .container .login-btn .down {
+    border: 1px solid #e8037d;
+    background-color: #e8037d;
+    margin-right: 27px;
+    box-sizing: content-box;
+}
+#header ul li.link:hover > a {
+  color: #d0006f;
+  border-bottom: 2px solid #d0006f;
+}
+#header ul li:hover .silideDown {
+  display: flex;
+}
+
+header .container .login-btn a {
+    display: inline-block;
+    text-align: center;
+    line-height: 42px;
+    width: 80px;
+    height: 42px;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    color: #fff;
+    align-self: center;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+    box-sizing: content-box;
+}
+header .container ul {
+    order: 1;
+    list-style: none;
+    display: flex;
+    margin-left: 88px;
+    margin: 0;
+}
+header .container ul li {
+    padding: 0 25px;
+}
+header .container ul li:hover  a.list::after{
+  transform: rotate(180deg);
+}
+
+header .container ul li > a {
+    text-decoration: none;
+    font-size: 15px;
+    /* font-weight: 600; */
+    line-height: 33px;
+    color: #fff;
+    position: relative;
+    background-color: transparent;
+}
+header .container ul li a.list::after {
+    display: block;
+    content: ' ';
+    background-image: url(/images/arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 8px;
+    height: 4px;
+    right: -12px;
+    top: 8px;
+    transition: all 0.5s;
+}
+#header ul li .silideDown {
+    transition: all 0.3s;
+    transition-delay: 0.5s;
+    position: absolute;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 1220px;
+    background-color: #fff;
+    /* display: none; */
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+    left: 0;
+    top: 55px;
+    border-radius: 4px;
+    color: #060b17;
+}
+#header ul li .silideDown::before {
+    display: block;
+    content: ' ';
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    position: absolute;
+    top: -7px;
+    left: 150px;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+}
+#header ul li .silideDown.second::before {
+    left: 245px; 
+}
+#header ul li .silideDown.third::before {
+    left: 340px;
+}
+#header ul li .silideDown .list-items:first-of-type {
+    margin-left: 0;
+}
+#header ul li .silideDown .list-items {
+    flex: 1;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+#header ul li .silideDown .list-items h3 {
+    font-weight: 600;
+    margin: 0;
+    margin-left: 5px;
+    color: #060b17;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    /* border-bottom: 1px solid #b9b9b9; */
+    position: relative;
+}
+#header ul li .silideDown .list-items h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #b9b9b9;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+#header ul li .silideDown .list-items .item {
+    flex: 1;
+}
+#header ul li .silideDown .list-items .item a {
+    display: block;
+    /* height: 40px; */
+    line-height: 40px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    padding: 0 5px;
+}
+#header ul li .silideDown .list-items .item .desc {
+    color: #717273;
+    font-size: 11px;
+    line-height: 19px;
+    padding: 0px 0px 10px;
+}

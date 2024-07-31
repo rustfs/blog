@@ -1,0 +1,28 @@
+
+.topics__label {
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+.topics__links {
+    margin-left: -5px;
+}
+.topics__links>a {
+    border-radius: 20px;
+    color: #474747;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    line-height: 100%;
+    padding: 12px 15px;
+    margin: 6px 0;
+}
+.topics__links>a:hover{
+    background-color: #f4f4f4;
+}

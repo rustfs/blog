@@ -1,0 +1,32 @@
+<section class="container">
+    <div class="columns">
+        <div class="column one-third">
+            <%- partial('common/sidebar-categories') %>
+          </div>
+        <div class="column two-thirds">
+            <% page.posts.each(function(post){ %>
+                <%- partial('article', {post: post, index: true}) %>
+            <% }) %>
+        </div>
+    </div>
+
+    <% if (page.total > 1){ %>
+      <div class="pagination text-align">
+          <div class="btn-group">
+              <%- paginator({
+                  show_all: true,
+                  prev_text: '&laquo;',
+                  next_text: '&raquo;'
+              }) %>
+          </div>
+      </div>
+      <script>
+        var handlePager = function(){ //处理分页btn样式
+            $(".btn-group>.page-number,.btn-group>.extend.prev,.btn-group>.extend.next").each(function(){
+                $(this).addClass("btn btn-outline");
+            });
+        };
+        handlePager()
+    </script>
+    <% } %>
+</section>

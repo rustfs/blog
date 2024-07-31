@@ -1,0 +1,18 @@
+<section class="container">
+    <div class="columns">
+        <div class="column <%if (page.toc == undefined ? true:page.toc) {%> three-fourths <%} else {%> single-column <%}%>" >
+            <h3 class="repo-list-name" itemprop="name">
+                <%- partial('post/title', {class_name: 'article-title'}) %>
+              </h3>
+            <article class="article-content markdown-body">
+                <%- post.content %>
+            </article>
+        </div>
+        <div class="column one-fourth">
+            <% if (page.toc == undefined ? true:page.toc) { %>
+                <%page.toc=true%>
+                <%- partial('post/toc') %>
+            <% } %>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<link rel="icon" href="/favicon.ico">
+<% title = config.title.concat(page.title ? " | " + page.title : "")%>
+<title><%= title %></title>
+<%- css('css/common.css') %>
+<%- css('css/category.css') %>
+<%- css('css/pagination.css') %>
+<%- css('css/article.css') %>
+<%- css('css/nav.css') %>
+<%- css('css/banner.css') %>
+<%- css('css/download.css') %>
+<%- css('css/footer.css') %>
+
+<!--在这里倒入jquery 方便处理部分页面的jquery-->
+<%- js('js/jquery.min.js') %>
+<%- js('js/search.js') %>
+<script>
+    var searchAction = function(){
+        var  search_path = "<%= config.search.path %>"
+        if (search_path.length == 0) {
+            search_path="search.xml"
+        } 
+        var path = "<%= config.root %>" + search_path
+        searchFunc(path, 'local-search-input', 'local-search-result')
+    }
+    searchAction()
+</script>
