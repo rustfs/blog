@@ -1,0 +1,38 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: A job to deploy blog.
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true # Checkout private submodules(themes or something else).
+    
+    # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
+    - name: Cache node modules
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+
+    # Deploy hexo blog website.
+    - name: Run deploy
+      uses: tiyee/aliyun-oss-auto-upload@v2.0.0
+      with:
+        region: oss-cn-beijing
+        access-key-id: ${{ secrets.ALICLOUDOSS_KEY_ID }}
+        access-key-secret: ${{ secrets.ALICLOUDOSS_KEY_SECRET }}
+        bucket: rustfs-blog
+        secure: true
+        local-folder: ./disk/ # local folder
+        remote-dir: /
