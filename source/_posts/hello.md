@@ -1,28 +1,28 @@
 ---
-title: Hello
+title: 测试的标题
 category: 人工智能
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+中文测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试
 
-## Quick Start
+## 快速开始
 
-### Create a new post 云服务
+### 创建一个新的云服务
  
 ``` bash
 $ hexo new "My New Post"
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+更多信息: [Writing](https://hexo.io/docs/writing.html)
 
-### Run server
+### 运行服务器
 
 ``` bash
 $ hexo server
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
+这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试这里是测试
 
-### Generate static files
+### 新建静态文件
 
 ``` bash
 $ hexo generate

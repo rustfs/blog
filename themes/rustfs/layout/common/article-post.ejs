@@ -1,4 +1,16 @@
 <section class="container">
+    <div class="breadcrumb">
+        <a href="/">首页</a>
+        >
+        <% if (page.categories) { %>
+            <% page.categories.each(function(tag){ %>
+				<a href="/<%= tag.path %>" 
+				><%=tag.name%></a>
+                >
+			<% }) %>
+        <% } %>
+        <span>正文</span>
+    </div>
     <div class="columns">
         <div class="column <%if (page.toc == undefined ? true:page.toc) {%> three-fourths <%} else {%> single-column <%}%>" >
             <h3 class="repo-list-name" itemprop="name">
